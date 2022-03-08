@@ -1,0 +1,47 @@
+body { 
+    /* Vi tar bort margin och padding så det inte 
+    blir några kanter runt hela sidan */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Vi sätter en backgrundsfärg och en text fär så
+    sidan inte blir basic vit och svart */
+    background-color: #F3F3F3;
+    color: #555;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Här börjar header CSS */
+nav {
+    display: flex; /*Skapar en flexbox*/
+    flex-direction: row; /*Allting i flexbaren läggs i en row*/
+    gap: 1%; /*1% mellanrum mellan alla items*/
+
+    Background-color: #2f2d2a;
+    list-style: none; /*vi tar bort punkt listan*/
+}
+
+nav li a {
+    /*vi går in i nav elementet, och sen in i li elementet
+    för att ändra på de specifika a elementen*/
+    text-decoration: none; /*vi tar bort länk färgen och understryckningen*/
+    color: #F3F3F3;
+}
+
+/*Här börjar Main CSS*/
+.Bild-samling-ett img {
+    /* Vi gör bilderna lite mindre */
+    width: 30%;
+    height: 30%;
+}
+
+/*Här börjar Footer CSS*/
+.footer-black-space {
+    background-color: #2f2d2a;
+}
