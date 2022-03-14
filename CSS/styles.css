@@ -3,45 +3,81 @@ body {
     blir några kanter runt hela sidan */
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
     /* Vi sätter en backgrundsfärg och en text fär så
     sidan inte blir basic vit och svart */
-    background-color: #F3F3F3;
-    color: #555;
+    background-color: #212121;
+    color: #3d3d3d;
 }
 
 body {
     display: flex;
     flex-direction: column;
+
+    min-height: 100vh; /*för att flexboxen ska täcka hela skärmen*/
 }
 
 /* Här börjar header CSS */
+header {
+    height: 60px;
+    width: 100%;
+    
+    /* From https://css.glass */
+    background: rgba(24, 24, 24, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(24, 24, 24, 1);
+
+    position: fixed;
+}
+
 nav {
     display: flex; /*Skapar en flexbox*/
     flex-direction: row; /*Allting i flexbaren läggs i en row*/
-    gap: 1%; /*1% mellanrum mellan alla items*/
+    justify-content: space-around; /*vi sprider ut dem inom containern och delar på utrymmet jämnt emellan alla*/
+    height: 100%;
+    align-items: center;
 
-    Background-color: #2f2d2a;
-    list-style: none; /*vi tar bort punkt listan*/
+    list-style: none; /*vi tar bort punkterna från listan*/
+    font-size: 30px;
 }
 
 nav li a {
     /*vi går in i nav elementet, och sen in i li elementet
     för att ändra på de specifika a elementen*/
     text-decoration: none; /*vi tar bort länk färgen och understryckningen*/
-    color: #F3F3F3;
+    color: #3d3d3d;
+}
+
+a:hover {
+    color: #aaaaaa;
 }
 
 /*Här börjar Main CSS*/
-.Bild-samling-ett img {
-    /* Vi gör bilderna lite mindre */
-    width: 30%;
-    height: 30%;
+main {
+    flex-grow: 1; /* default är 0, eftersom att main får 1
+    tar den dubbelt så mycket space som alla andra items, 
+    av den space:en som finns kvar*/
+
+    padding-top: 60px;
 }
 
-/*Här börjar Footer CSS*/
-.footer-black-space {
-    background-color: #2f2d2a;
+.Bild-samling-ett {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Bild-samling-ett img {
+    /* Vi gör bilderna mindre */
+    width: 30%;
+    height: auto;
+    margin: 1%; /*vi lägger till lite space runtomkring bilderna*/
+    object-fit: cover;
 }
