@@ -33,6 +33,7 @@ header {
     -webkit-backdrop-filter: blur(6.9px);
 
     position: fixed;
+    z-index: 1000000;
 }
 
 nav {
@@ -46,11 +47,16 @@ nav {
     font-size: 30px;
 }
 
+nav li {
+    width: 250px;
+    text-align: center;
+}
+
 nav li a {
     /*vi går in i nav elementet, och sen in i li elementet
     för att ändra på de specifika a elementen*/
     text-decoration: none; /*vi tar bort länk färgen och understryckningen*/
-    color: #7d7d7d;
+    color: #FFFFFF;
 }
 
 a:hover {
@@ -70,13 +76,27 @@ main {
     padding-top: 60px;
 }
 
+.wipCenter { /*Den här är till att centrera "work in progress"
+             på All Collections sidan*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .in-progress {
     /*Här skapar vi rutan på sidorna som jag inte är klara med*/
-    border: 1px solid white;
+    border: 1px solid #7d7d7d;
     width: 350px;
     margin: auto;
 
     text-align: center;
+}
+
+.aboutBorder {
+    /* css för rutan på About sidan*/
+    border: 2px solid #7d7d7d;
+    width: 40%;
+    padding: 2%;
 }
 
 .bild-samling {
@@ -92,7 +112,7 @@ main {
 .bild-samling div {
     /*Vi gör div:en mindre och lägger till ett mellanrum mellan dem*/
     width: 30%;
-    height: auto;
+    height: auto; /*height ändras automatiskt beroende på width*/
     margin: 1%;
 }
 
@@ -102,19 +122,28 @@ main {
     height: 100%;
     object-fit: cover; /*Bilderna ser bättre skalat ut, 
                        men lite av bilderna skärs bort*/
-
+    transition: 0.5s; /*Alla transforms sker på 0.5 sekunder*/
 }
 
-.buttons {
-    
-}
-
-    /*img transformation*/
 img:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+    transform: scale(1.1);  /*När man håller musen ovanför
+                            en bild ökar dens storlek med 1.1*/
 }
 
-img:active {
-    transform: rotateY(90deg); 
+    /*Text design in about page*/
+section h1 {
+    color: #aaa;
+    margin-bottom: 2%;
+    margin-top: 0;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 2%;
+}
+
+.email {
+    color: #aaa;
 }
