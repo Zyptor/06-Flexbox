@@ -56,15 +56,15 @@ nav li a {
     /*vi går in i nav elementet, och sen in i li elementet
     för att ändra på de specifika a elementen*/
     text-decoration: none; /*vi tar bort länk färgen och understryckningen*/
-    color: #FFFFFF;
+    color: #aaaaaa;
 }
 
 a:hover {
-    color: #aaaaaa;
+    color: #ffffff;
 }
 
 .current-page {
-    color: #aaaaaa;
+    color: #ffffff;
 }
 
 /*Här börjar Main CSS*/
@@ -111,9 +111,26 @@ main {
 
 .bild-samling div {
     /*Vi gör div:en mindre och lägger till ett mellanrum mellan dem*/
-    width: 30%;
+    width: 29%;
     height: auto; /*height ändras automatiskt beroende på width*/
-    margin: 1%;
+    margin: 2%;
+
+    transition: 0.5s; /*Alla transforms sker på 0.5 sekunder*/
+}
+
+.bild-samling div a {
+    display: block; 
+    height: 10%;
+    border: 1px solid transparent;
+    background-color: rgb(24, 24, 24);
+    
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+.bild-samling div a:hover {
+    color: #ffff;
 }
 
 .bild-samling img {
@@ -122,28 +139,47 @@ main {
     height: 100%;
     object-fit: cover; /*Bilderna ser bättre skalat ut, 
                        men lite av bilderna skärs bort*/
-    transition: 0.5s; /*Alla transforms sker på 0.5 sekunder*/
 }
 
-img:hover {
+.bild-samling div:hover {
     transform: scale(1.1);  /*När man håller musen ovanför
                             en bild ökar dens storlek med 1.1*/
 }
 
     /*Text design in about page*/
-section h1 {
-    color: #aaa;
-    margin-bottom: 2%;
-    margin-top: 0;
-}
+    section h1 {
+        color: #aaa;
+        margin-bottom: 2%;
+        margin-top: 0;
+    }
 
-section p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-    margin-top: 0;
-    margin-bottom: 2%;
-}
+    section p {
+        font-size: 1.1em;
+        line-height: 1.5em;
+        margin-top: 0;
+        margin-bottom: 2%;
+    }
 
-.email {
-    color: #aaa;
-}
+    .email {
+        color: #aaa;
+    }
+
+    /* z-index ordning */
+    .bild1 {
+        z-index: 9;
+    }
+    .bild2 {
+        z-index: 8;
+    }
+    .bild3 {
+        z-index: 7;
+    }
+    .bild4 {
+        z-index: 6;
+    }
+    .bild5 {
+        z-index: 5;
+    }
+    .bild6 {
+        z-index: 4;
+    }
